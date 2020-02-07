@@ -24,8 +24,8 @@ make
 To stop viewing press Esc
 
 ### Requirements
-[OpenCV|https://github.com/opencv/opencv] (Tested 3.4.5)
+[OpenCV](https://github.com/opencv/opencv) (Tested 3.4.5)
 
-[CMake|https://cmake.org/] (Tested 3.15)
+[CMake](https://cmake.org/) (Tested 3.15)
 
 gcc (Tested 7.3.0)
