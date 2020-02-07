@@ -28,7 +28,7 @@ struct Proj
 
 vector<Ainv> read_ainv_matrices()
 {
-  ifstream f("../ainv", ios::binary);
+  ifstream f("../data/ainv", ios::binary);
   vector<Ainv> result;
   int n = 0;
   f >> n;
@@ -46,7 +46,7 @@ vector<Ainv> read_ainv_matrices()
 
 Proj read_proj_matrix()
 {
-  ifstream f("../proj", ios::binary);
+  ifstream f("../data/proj", ios::binary);
   array<double, 9> a;
   for (int i = 0; i < 9; ++i)
     f >> a[i];
@@ -75,7 +75,7 @@ int main()
   cout << endl;
   cout << endl;
   
-  cv::Mat img = cv::imread("/home/prun/X/prun/Bezmaternykh/20200205/akn.200.001.left.000138.png");  
+  cv::Mat img = cv::imread("../imgs/akn.200.001.left.000138.png");  
 
   for (const auto &a : ainv)
   {
@@ -99,13 +99,10 @@ int main()
 
     }
 
-      //if (i % 5 == 0)
-      {
-        cv::line(img, {pix[0].x, pix[0].y}, {pix[1].x, pix[1].y},
-          cv::Scalar(100, 100, 230), 1, cv::LINE_AA);
-        cv::line(img, {pix[0].x, pix[0].y}, {pix[2].x, pix[2].y},
-          cv::Scalar(230, 100, 100), 1, cv::LINE_AA);
-      }
+    cv::line(img, {pix[0].x, pix[0].y}, {pix[1].x, pix[1].y},
+      cv::Scalar(100, 100, 230), 1, cv::LINE_AA);
+    cv::line(img, {pix[0].x, pix[0].y}, {pix[2].x, pix[2].y},
+      cv::Scalar(230, 100, 100), 1, cv::LINE_AA);
   }
 
   cv::imshow("img", img);
