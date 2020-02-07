@@ -5,7 +5,7 @@ Test task materials for Cogintive Robotics candidates
 
 ### Description
 Project contains two source files: 
-* projections.hpp which contains methods and classes to work with pinhole projection
+* projections.hpp which contains methods and classes to work with pinhole projection. Note: this file has no dependencies besides std::array. you can use it without opencv
 * main.cpp which contains an example of usage.
 
 ### Resources
